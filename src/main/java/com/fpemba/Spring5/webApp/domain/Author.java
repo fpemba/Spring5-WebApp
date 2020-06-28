@@ -17,9 +17,6 @@ public class Author {
     @ManyToMany(mappedBy = "authors")
     private Set<Book> books = new HashSet<>();
 
-    @OneToMany
-    private Set<Publisher> publisher = new HashSet<>();
-
     public Author(){
 
     }

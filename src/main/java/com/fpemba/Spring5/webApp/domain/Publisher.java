@@ -18,20 +18,26 @@ public class Publisher {
     private String zip;
 
     @OneToMany
-    private Set<Author> authors = new HashSet<>();
-
-    @ManyToMany(mappedBy = "publishers")
+    @JoinColumn(name = "publisher_id")
     private Set<Book> books = new HashSet<>();
 
     public Publisher() {
     }
 
-    public Publisher(String name, String addressLine1, String city, String state, String zip) {
-        this.name = name;
-        this.addressLine1 = addressLine1;
-        this.city = city;
-        this.state = state;
-        this.zip = zip;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
 
     public String getName() {
